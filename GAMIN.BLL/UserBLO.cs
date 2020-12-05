@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GAMIN.BO;
+using GAMIN.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +10,13 @@ namespace GAMIN.BLL
 {
     public class UserBLO
     {
+        UserDAO userRepo;
+
         public UserBLO(string dbFolder)
         {
             userRepo = new UserDAO(dbFolder);
         }
-        public void CreateUsert(User user)
+        public void CreateUser(User user)
         {
             userRepo.Add(user);
         }
@@ -31,9 +35,9 @@ namespace GAMIN.BLL
 
             return company;
         }
-        public IEnumerable<User> GetByReference(string reference)
+        public IEnumerable<User> GetByReference(string matricule)
         {
-            return userRepo.Find(x => x.Matricule == reference);
+            return userRepo.Find(x => x.Matricule == matricule);
         }
         public IEnumerable<User> GetBy(Func<User, bool> predicate)
         {
@@ -44,5 +48,7 @@ namespace GAMIN.BLL
         {
             userRepo.Set(oldUser, newUser);
         }
+
+      
     }
 }
