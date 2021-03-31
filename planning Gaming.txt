@@ -1,0 +1,9 @@
+
+                      Planning de répartitions des tâches
+
+	Djoupossi => 	Creation de la base de donnée et implemantation 
+             		de l'interface d'inscription
+	Djeagou => 	implémentation de l'interface de connexion 
+        Emmanuel Mbang  => implementation de l'interface de quizz
+	Wenji 	=>	mise sur pied de l'api
+        Nokmis  =>	conception des intefaces	
